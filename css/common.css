@@ -1,0 +1,603 @@
+/* Reset CSS  */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: top;
+    -webkit-text-size-adjust: none;
+}
+
+html,
+body {
+    font-family: 'Roboto', 'Orbitron', sans-serif;
+    font-size: 18px;
+    color: #fff;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+ul,
+ol,
+dl {
+    list-style: none;
+}
+
+img,
+video {
+    border: 0;
+    vertical-align: top;
+}
+
+a,
+a:link {
+    color: #333;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #333;
+}
+
+a:hover,
+a:active {
+    color: #333;
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input,
+select {
+    vertical-align: middle;
+}
+
+label {
+    cursor: pointer;
+}
+
+.blind,
+legend,
+hr,
+caption {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: -1000em;
+}
+
+i,
+em,
+address {
+    font-style: normal;
+    font-weight: normal;
+}
+
+p,
+li,
+dd {
+    line-height: 1.5em
+}
+
+.hidden,
+#skipNav {
+    display: block;
+    position: absolute;
+    left: -1000%;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* 헤더 공통 영역 */
+#wrap {
+    width: 100%;
+    overflow: hidden
+}
+
+#headerArea {
+    position: fixed;
+    z-index: 30;
+    height: 120px;
+    background: rgba(0, 0, 0, .7);
+    left: 0;
+    top: 0;
+    width: 100%
+}
+
+#headerArea .headerInner {
+    width: 90%;
+    margin: 0 5%;
+    overflow: hidden
+}
+
+#headerArea h1 {
+    float: left;
+}
+
+#headerArea h1 a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 200px;
+    height: 120px;
+    background: url(../images/bell_logo.png) 0 50% no-repeat;
+    background-size: 100% auto;
+    text-indent: -9999%;
+    font-size: 0;
+    overflow: hidden;
+}
+
+#headerArea #gnb {
+    float: right;
+    margin-top: 45px
+}
+
+#headerArea #gnb ul {
+    overflow: hidden
+}
+
+#headerArea #gnb ul li {
+    float: left;
+    margin-left: 30px;
+}
+
+#headerArea #gnb ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.667rem;
+    display: block;
+    transition: all .3s;
+}
+#headerArea #gnb ul li a:hover {
+    background: linear-gradient(to right, #fec1c6, #ae1e1d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+#headerArea .box {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.7;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: none
+}
+
+#headerArea .btn {
+    color: #fff;
+    display: none;
+}
+
+#headerArea #gnb .close {
+    color: #fff;
+    display: none;
+}
+
+/* 스크롤 */
+.down{display: block; font-size: 20px; position: absolute; 
+    left:50%; bottom: 10%;
+   animation:ani 1s infinite alternate;}
+@keyframes ani {
+   0% { transform:translateX(-50%) translateY(0); opacity:1; color:#fff;}
+   100% { transform:translateX(-50%) translateY(-20px); opacity:0.8; color:#ce3c3c;}
+}
+.down div{background: url(../images/scroll.png) 50% 0% no-repeat;
+  padding-top: 100px;}
+
+
+
+/* 푸터 공통 영역 */
+#footerArea {
+    background: rgba(51, 51, 51, .7);
+    position: relative;
+    padding: 90px 0 120px;
+}
+
+#footerArea::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    background: url(../images/footer_bg.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+#footerArea div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footerArea .word_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#footerArea .word {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.222rem;
+    font-weight: 900;
+    position: relative;
+    color: #fff;
+}
+
+#footerArea p {
+    font-family: 'Orbitron', sans-serif;
+    margin: 30px 0;
+}
+
+#footerArea ul li {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #fff;
+    overflow: hidden;
+    float: left;
+    margin-right: 25px;
+    border-radius: 15px;
+}
+
+#footerArea ul li a {
+    display: block;
+    height: 100%;
+    text-indent: -9999%;
+    font-size: 0;
+}
+
+#footerArea ul li:nth-child(1) a {
+    background: url(../images/sns01.png) center no-repeat;
+    background-size: 70%;
+}
+
+#footerArea ul li:nth-child(2) a {
+    background: url(../images/sns02.png) center no-repeat;
+    background-size: 70%;
+}
+
+#footerArea ul li:nth-child(3){
+    margin-right: 0;
+}
+#footerArea ul li:nth-child(3) a {
+    background: url(../images/sns03.png) 60% 100% no-repeat;
+    background-size: 80%;
+}
+
+/* footer top */
+@keyframes font_ani {
+    0% {
+        color: rgba(255, 95, 218, 0.8);
+    }
+ 
+    50% {
+        color: #fff;
+    }
+ 
+    100% {
+        color: rgba(255, 95, 218, 0.8);
+    }
+ }
+ 
+ #footerArea .top {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    font-size: 23px;
+    z-index: 2;
+    color: #fff;
+    background: url(../images/phone.png) center no-repeat;
+    background-size: cover;
+    width: 60px;
+    height: 110px;
+    line-height: 110px;
+    text-align: center;
+    box-shadow: 0px 0px 10px 5px rgba(255, 95, 218, 0.8);
+    border-radius: 10px;
+    animation: font_ani 2s infinite;
+ }
+
+/* OPTIONAL / defining page color variables */
+/* :root {
+    --green: #62Ba9B;
+  } */
+ 
+/* REQUIRED / besides position, pointer-events, transform, and transition, the rest are customizable styling */
+.small {
+    height: 10px;
+    width: 10px;
+    background-color: var(--green);
+    border-radius: 10px;
+    filter: drop-shadow(0 0 5px var(--green)) drop-shadow(0 0 20px var(--green));
+    
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: height 0.2s, width 0.2s;
+ 
+    z-index: 100;
+  }
+  
+  /* REQUIRED / besides position, pointer-events, transform, and transition, the rest are customizable styling */
+  .big {
+    height: 50px;
+    width: 50px;
+    border: 3px solid var(--green);
+    border-radius: 100px;
+    filter: drop-shadow(0 0 5px var(--green)) drop-shadow(0 0 20px var(--green));
+    
+    position: fixed;
+    pointer-events: none;
+    transform: translate(calc(-50%), -50%);
+    transition: height 0.5s, width 0.5s, filter 0.5s;
+ 
+    z-index: 100;
+  }
+  
+  /* REQUIRED / some styling is necessary for hover effect */
+  .hover__big {
+    height: 100px;
+    width: 100px;
+    filter: drop-shadow(0 0 5px var(--green)) drop-shadow(0 0 20px var(--green)) drop-shadow(0 0 40px var(--green));
+    
+    transition: height 0.5s, width 0.5s, filter 0.5s;
+  }
+  
+  /* REQUIRED / some styling is necessary for hover effect */
+  .hover__small {
+    height: 8px;
+    width: 8px;
+    
+    transition: height 0.2s, width 0.2s;
+  }
+
+
+/* 일반 pc */
+@media screen and (max-width:1280px) {
+    #headerArea {
+        height: 100px;
+    }
+    #headerArea h1 a {
+        width: 180px;
+        height: 100px;
+    }
+    #headerArea #gnb {
+        margin-top: 40px
+    }
+    #headerArea #gnb ul li a {
+        font-size: 1.55rem;
+    }
+
+}
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+    html,
+    body {
+        font-size: 16px;
+    }
+    
+    #footerArea {
+        padding: 70px 0 100px;
+    }
+    
+    #footerArea .top {
+        font-size: 20px;
+        width: 50px;
+        height: 90px;
+        line-height: 90px;
+        border-radius: 7px;
+    }
+    #footerArea .word {
+        font-size: 2rem;
+    }
+    #footerArea p {
+        margin: 25px 0;
+    }
+    
+    #footerArea ul li {
+        width: 55px;
+        height: 55px;
+    }
+    
+    
+    #footerArea ul li:nth-child(1) a {
+        background-size: 65%;
+    }
+    
+    #footerArea ul li:nth-child(2) a {
+        background-size: 65%;
+    }
+    
+    #footerArea ul li:nth-child(3) a {
+        background-size: 75%;
+    }
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+    #headerArea {
+        height: 80px;
+    }
+
+    #headerArea h1 a {
+        width: 160px;
+        height: 80px;
+    }
+
+    #headerArea #gnb {
+        margin-top: 0;
+        clear: both;
+        width: 80%;
+        position: absolute;
+        right: -100%;
+        top: 0;
+        background: #333;
+        opacity: 0;
+        z-index: 20;
+    }
+
+    #headerArea #gnb ul {
+        padding-top: 200px;
+        background: url(../images/scroll.png) 50% 15% no-repeat;
+    }
+
+    #headerArea #gnb ul li {
+        float: none;
+        width: auto;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    #headerArea #gnb ul li a {
+        font-size: 1.7rem;
+        font-family: 'Orbitron', sans-serif;
+        padding: 50px 0;
+    }
+
+    #headerArea .btn {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 5%;
+        font-size: 1.7rem;
+    }
+
+    #headerArea #gnb .close {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 7%;
+        font-size: 2rem;
+    }
+}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    #footerArea {
+        padding: 70px 0 70px;
+    }
+    #footerArea .top {
+        font-size: 1rem;
+        width: 45px;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 5px;
+    }
+    #footerArea p {
+        margin: 20px 0;
+    }
+    
+    #footerArea ul li {
+        width: 50px;
+        height: 50px;
+    }
+    
+    
+    #footerArea ul li:nth-child(1) a {
+        background-size: 60%;
+    }
+    
+    #footerArea ul li:nth-child(2) a {
+        background-size: 60%;
+    }
+    
+    #footerArea ul li:nth-child(3) a {
+        background-size: 70%;
+    }
+}
+
+
+/* 최소 사이즈 처리 */
+@media screen and (max-width:480px) {
+    
+
+    #wrap {
+        min-width: 320px;
+    }
+
+    #headerArea #gnb {
+        width: 100%;
+        background: rgba(51, 51, 51, .8);
+    }
+    #headerArea #gnb ul {
+        padding-top: 150px;
+        background: url(../images/scroll.png) 50% 10% no-repeat;
+    }
+    #headerArea #gnb ul li a {
+        font-size: 1.5rem;
+        padding: 40px 0;
+    }
+    #headerArea .box {
+        display: none;
+    }
+
+    #footerArea {
+        padding: 50px 0 50px;
+    }
+    #footerArea .top {
+        font-size: .9rem;
+        width: 45px;
+        height: 75px;
+        line-height: 75px;
+        border-radius: 3px;
+    }
+    
+    #footerArea ul li {
+        width: 45px;
+        height: 45px;
+    }
+    
+    
+    #footerArea ul li:nth-child(1) a {
+        background-size: 55%;
+    }
+    
+    #footerArea ul li:nth-child(2) a {
+        background-size: 55%;
+    }
+    
+    #footerArea ul li:nth-child(3) a {
+        background-size: 65%;
+    }
+    
+}
+
+@media screen and (max-width:320px) {
+    html,
+    body {
+        font-size: 14px;
+    }
+}

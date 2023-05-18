@@ -1,0 +1,809 @@
+/* 와이드 pc  */
+.videoBox{width:100%;height:100%; overflow:hidden; position:absolute}
+#imgBG{
+	position:fixed; /*고정=>fixed/ 스크롤처리=>absolute */
+   left:50%;
+   top:50%; /*오른쪽, 아래에 여백을 두지않고 꽉차게 표시*/
+   width:auto;
+   min-width:100%; /*동영상 너비를 꽉차게*/
+   height:auto;
+   min-height:100%; /*동영상 높이를 꽉차게*/
+  transform:translateX(-50%) translateY(-50%);
+   z-index:-100;
+   /* display:none; */
+}
+
+:root {
+    --green: #7db3ff;
+  }
+
+/* sub1 footer top */
+@keyframes font_ani {
+    0% {
+        color: rgba(77, 114, 166, .8);
+    }
+
+    50% {
+        color: #fff;
+    }
+
+    100% {
+        color: rgba(77, 114, 166, .8);
+    }
+}
+
+#footerArea .top {
+    box-shadow: 0px 0px 10px 5px rgba(77, 114, 166, .8);
+    animation: font_ani 2s infinite;
+}
+
+#content{
+    position: relative;
+    /* background: linear-gradient(to bottom, #fff, #fec1c6); */
+}
+#content h2{
+    position: absolute;
+    top: -500px;
+    left: 0;
+    text-align: center;
+    font-size: 3.889rem;
+    width: 100%;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0px 0px 10px rgba(77, 114, 166, .8);
+    /* -webkit-text-stroke: 1px rgb(77, 114, 166); */
+}
+.move {
+    animation: animateRed 2s infinite ease alternate;
+    }
+    
+@keyframes animateRed {
+    0% { }
+    100% { transform:  scale(1.1, 1.1)}
+}
+    
+/* glitch 효과 */
+
+h2.glitch::before, h2.glitch::after {
+    content: "CHARACTER";
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49.5%, -49.5%);
+  }
+h2.glitch::before {
+    text-shadow: -2px 0 red;
+    animation-name: glitch-animation-1;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+  }
+h2.glitch::after {
+    text-shadow: -2px 0 blue;
+    animation-name: glitch-animation-2;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+  }
+  
+  @keyframes glitch-animation-1 {
+    0% {
+      clip: rect(73px, 550px, 62px, 0px);
+    }
+    5% {
+      clip: rect(49px, 550px, 27px, 0px);
+    }
+    10% {
+      clip: rect(121px, 550px, 121px, 0px);
+    }
+    15% {
+      clip: rect(68px, 550px, 24px, 0px);
+    }
+    20% {
+      clip: rect(19px, 550px, 143px, 0px);
+    }
+    25% {
+      clip: rect(98px, 550px, 8px, 0px);
+    }
+    0% {
+      clip: rect(20px, 550px, 126px, 0px);
+    }
+    35% {
+      clip: rect(74px, 550px, 76px, 0px);
+    }
+    40% {
+      clip: rect(103px, 550px, 60px, 0px);
+    }
+    45% {
+      clip: rect(149px, 550px, 5px, 0px);
+    }
+    50% {
+      clip: rect(149px, 550px, 53px, 0px);
+    }
+    55% {
+      clip: rect(57px, 550px, 34px, 0px);
+    }
+    60% {
+      clip: rect(36px, 550px, 115px, 0px);
+    }
+    65% {
+      clip: rect(39px, 550px, 51px, 0px);
+    }
+    70% {
+      clip: rect(78px, 550px, 14px, 0px);
+    }
+    75% {
+      clip: rect(23px, 550px, 91px, 0px);
+    }
+    80% {
+      clip: rect(32px, 550px, 34px, 0px);
+    }
+    85% {
+      clip: rect(140px, 550px, 79px, 0px);
+    }
+    90% {
+      clip: rect(143px, 550px, 78px, 0px);
+    }
+    95% {
+      clip: rect(65px, 550px, 144px, 0px);
+    }
+    100% {
+      clip: rect(61px, 550px, 38px, 0px);
+    }
+  }
+  @keyframes glitch-animation-2 {
+    0% {
+      clip: rect(125px, 550px, 69px, 0px);
+    }
+    5% {
+      clip: rect(92px, 550px, 17px, 0px);
+    }
+    10% {
+      clip: rect(109px, 550px, 44px, 0px);
+    }
+    15% {
+      clip: rect(137px, 550px, 140px, 0px);
+    }
+    20% {
+      clip: rect(5px, 550px, 1px, 0px);
+    }
+    25% {
+      clip: rect(139px, 550px, 95px, 0px);
+    }
+    0% {
+      clip: rect(79px, 550px, 115px, 0px);
+    }
+    35% {
+      clip: rect(121px, 550px, 5px, 0px);
+    }
+    40% {
+      clip: rect(48px, 550px, 106px, 0px);
+    }
+    45% {
+      clip: rect(134px, 550px, 117px, 0px);
+    }
+    50% {
+      clip: rect(53px, 550px, 38px, 0px);
+    }
+    55% {
+      clip: rect(64px, 550px, 132px, 0px);
+    }
+    60% {
+      clip: rect(118px, 550px, 13px, 0px);
+    }
+    65% {
+      clip: rect(40px, 550px, 120px, 0px);
+    }
+    70% {
+      clip: rect(72px, 550px, 148px, 0px);
+    }
+    75% {
+      clip: rect(53px, 550px, 108px, 0px);
+    }
+    80% {
+      clip: rect(31px, 550px, 134px, 0px);
+    }
+    85% {
+      clip: rect(61px, 550px, 139px, 0px);
+    }
+    90% {
+      clip: rect(28px, 550px, 139px, 0px);
+    }
+    95% {
+      clip: rect(117px, 550px, 94px, 0px);
+    }
+    100% {
+      clip: rect(94px, 550px, 122px, 0px);
+    }
+  }
+
+/* 캐릭터 design info */
+
+#content .chrt_design div{
+    background: linear-gradient(to bottom, #cbcaea, #9fb7dd);
+    color: #333;
+    padding: 3rem 7%;
+}
+#content .chrt_design div span{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    display: block;
+    color: #fff;
+    text-shadow: 0px 0px 10px #4f74a9;
+    margin-bottom: 10px;
+}
+#content .chrt_design div p{
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: justify;
+    padding: 0 5%;
+}
+#content .chrt_design div p:nth-of-type(1){
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: 'Orbitron', sans-serif;
+}
+#content .chrt_design ul{
+    padding: 5rem 5%;
+}
+#content .chrt_design ul li{
+    width: 50%;
+    position: relative;
+    animation: none;
+    transform-style: preserve-3d;
+    transition: all .5s;
+    margin: 0 auto 20px;
+}
+#content .chrt_design ul li:nth-child(1){
+    right: 20%;
+}
+#content .chrt_design ul li:nth-child(2){
+    right: -29%;
+}
+#content .chrt_design ul li:nth-child(3){
+    right: 20%;
+}
+
+#content .chrt_design ul li:hover{
+    transform: rotate3d(3, 3, 0, 20deg);
+}
+#content .chrt_design ul li:nth-child(2):hover{
+    transform: rotate3d(-3, 3, 0, -20deg);
+}
+
+
+#content .chrt_design ul li img{
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
+    object-position: left;
+    border: 5px solid #4f74a9;
+    box-sizing: border-box;
+    border-radius: 10% 30% / 40% 20%;
+}
+
+
+#content .chrt_design ul li p{
+    position: absolute;
+    left: 0;
+    bottom: -35px;
+    width: 100%;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+    -webkit-text-stroke: 2px #4f74a9;
+    text-shadow: 0px 0px 5px #fff;
+    transition: all .5s;
+}
+
+@keyframes font {
+    to{}
+    from{font-size: 3.5rem;}
+}
+#content .chrt_design ul li:hover p{
+    animation: font .5s 1 linear reverse forwards;
+    left: 80%;
+    bottom: 100px;
+}
+#content .chrt_design ul li:nth-child(2):hover p{
+    animation: font .5s 1 linear reverse forwards;
+    left: -100%;
+    bottom: 100px;
+}
+
+#content .main_chrt{
+    background: rgba(51, 51, 51, .7);
+    padding-top: 80px;
+    background-image: url(../images/Clouds.png);
+    background-size: 100%, 40%, 50%, 20%, cover;
+    background-repeat: no-repeat;
+    /* background-position: -300px 10%, -200px 70%, 200px 40%, 400px 80%, 100%; */
+    background-position: -300px 50%, -200px 50%, 200px 50%, 400px 50%, 100%;
+    animation: animater 20s 2s ease-out infinite alternate;
+    /* min-height: 100vh; */
+}
+@keyframes animater {
+    to {
+      /* background-position: 200px 10%, 500px 70%, 600px 40%, 800px 80%, 100%; */
+      background-position: 200px 50%, 500px 50%, 600px 50%, 800px 50%, 100%;
+      /* background-size: 100%, 40%, 50%, 20%, cover; */
+    }
+  }
+
+#content .main_chrt .change_btn{
+    margin: 0 auto;
+    width: 120px;
+    height: 60px;
+    border: 2px solid #9fb7dd;
+    border-radius: 50px;
+    box-shadow: 0px 0px 5px #9fb7dd;
+    position: relative;
+}
+#content .main_chrt .change_btn::after{
+    content: 'UI';
+    display: block;
+    position: absolute;
+    color: #9fb7dd;
+    text-align: center;
+    font-family: 'Orbitron', 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 2.5;
+    letter-spacing: 3px;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    transform: scale(.85);
+    transition: left .5s;
+}
+#content .main_chrt .change_btn.active{
+    background: rgba(255, 255, 255, .3);
+}
+#content .main_chrt .change_btn.active::after{
+    left: 50%;
+    background: #9fb7dd;
+    color: #fff;
+}
+
+
+#content .main_chrt ul{
+    padding: 3rem 10%;
+}
+    /* 3D 프로필 */
+#content .main_chrt .rotate_img{
+    width: 50%;
+    perspective: 1000px;
+    float: left;
+    
+}
+#content .main_chrt .rotate_img .item{
+    width: 330px;
+    height: 340px;
+    backface-visibility: hidden;
+    transition: all .5s;
+    border: 2px solid #9fb7dd;
+    box-shadow: 0px 0px 10px #9fb7dd;
+    margin-left: 20%;
+}
+#content .main_chrt .rotate_img .item img{
+    width: 100%;
+    height: 100%;
+}
+#content .main_chrt .rotate_img .item.front{
+    position: absolute;
+    transform: rotateY(0deg);
+}
+
+#content .main_chrt .rotate_img .item.back{
+    transform: rotateY(-180deg);
+}
+
+#content .main_chrt .rotate_img.active .item.front{
+    transform: rotateY(180deg);
+}
+#content .main_chrt .rotate_img.active .item.back{
+    transform: rotateY(0deg);
+}
+
+#content .main_chrt .main_pro{
+    width: 50%;
+    float: right;
+    padding-top: 5%;
+}
+#content .main_chrt ul li{
+    overflow: hidden;
+    margin-bottom: 50px;
+    padding: 10px;
+}
+
+#content .main_chrt .main_pro h3{
+    font-size: 2.5rem;
+    font-family: 'Orbitron', 'Roboto', sans-serif;
+    margin-bottom: 30px;
+    color: #9fb7dd;
+}
+#content .main_chrt .main_pro p{
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: justify;
+    text-shadow: 0px 0px 1px #333;
+}
+
+#content .sub_pro{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    grid-row-gap: 5rem;
+    padding: 5rem 10%;
+    background: url(../images/sub2_bg.jpg) center no-repeat;
+    background-size: cover;
+}
+#content .sub_pro li{
+    width: 70%;
+    border-radius: 10% 40% / 50% 20%;
+    border: 3px solid #9fb7dd;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#content .sub_pro li img{
+    width: 100%;
+    border-radius: 10% 40% / 50% 20%;
+    transition: all .3s;
+    position: relative;
+    
+}
+#content .sub_pro li:hover img{
+    filter: blur(1px) grayscale(1);
+}
+
+#content .sub_pro li div{
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: -150%;
+    background: rgba(77, 88, 118, .7);
+    padding: 2rem 7% 0;
+    transition: top .3s;
+}
+#content .sub_pro li:hover div{
+    top: 0;
+}
+#content .sub_pro li div h3{
+    padding: 5% 0;
+    font-size: 1.5vw;
+}
+#content .sub_pro li div p{
+    font-size: 1.1vw;
+    line-height: 1.7;
+}
+
+/* +일반 pc */
+@media screen and (max-width:1600px) {
+    #content .sub_pro li div{
+        padding: 1.2rem 7% 0;
+    }
+}
+
+/* 일반 pc */
+@media screen and (max-width:1280px) {
+    #content .main_chrt ul{
+        padding: 3rem 7%;
+    }
+    #content .chrt_design ul li p{
+        font-size: 2.2rem;
+    }
+
+    @keyframes font {
+        to{}
+        from{font-size: 3rem;}
+    }
+    #content .sub_pro li{
+        width: 85%;
+    }
+    #content .sub_pro li:hover div{
+        padding-top: 1.5rem;
+        text-align: center;
+    }
+    #content .sub_pro li div h3{
+        padding: 0 0 3%;
+        font-size: 1.5rem;
+    }
+    #content .sub_pro li div p{
+        font-size: 1.4vw;
+    }
+}
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+    .down{
+    font-size: 1rem;
+    }
+    #content .chrt_design div span{
+        font-size: 2.5rem;
+    }
+    #content .chrt_design div p:nth-of-type(1){
+        font-size: 1.1rem;
+    }
+    #content .chrt_design div p{
+        font-size: 1rem;
+    }
+    #content .chrt_design ul li p{
+        font-size: 2rem;
+    }
+
+    @keyframes font {
+        to{}
+        from{font-size: 2.5rem;}
+    }
+    
+    #content .main_chrt .rotate_img .item{
+        width: 300px;
+        height: 310px;
+    }
+    #content .sub_pro{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #content .sub_pro li div h3{
+        font-size: 4vw;
+        padding: 8% 0 5%;
+    }
+    #content .sub_pro li div p{
+       font-size: 2vw;
+    }
+    @keyframes touch {
+        0%{color: #fff;}
+        50%{color: #333;}
+        100%{color: #fff;}
+    }
+
+    #content .sub_pro li::after{
+        content: 'Touch!';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5vw;
+        animation: touch 2s infinite linear;
+    }
+    #content .sub_pro li:hover::after{
+        display: none;
+    }
+}
+
+/* 이미지 깨짐 방지 해상도 추가 */
+@media screen and (max-width:950px) {
+    #content .main_chrt .rotate_img .item{
+        margin-left: 0;
+    }
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+    #content .chrt_design ul li{
+        width: 65%;
+    }
+    #content .chrt_design ul li:nth-child(1),#content .chrt_design ul li:nth-child(3){
+        right: 15%;
+    }
+    #content .chrt_design ul li:nth-child(2){
+        right: 0;
+        left: 20%;
+    }
+    #content .chrt_design ul li img{
+        width: 90%;
+    }
+    #content .chrt_design ul li p{
+        bottom: -20px;
+    }
+    #content .chrt_design ul li:hover p{
+        left: 60%;
+    }
+    #content .chrt_design ul li:nth-child(2):hover p{
+        left: -65%;
+    }
+    @keyframes font {
+        to{}
+        from{font-size: 2.3rem;}
+    }
+
+    #content .main_chrt .main_pro{
+        width: auto;
+        float: none;
+        margin-left: 300px;
+    }
+    #content .main_chrt .rotate_img .item{
+        width: 280px;
+        height: 290px;
+    }
+    #content .main_chrt .main_pro h3{
+        font-size: 2.3rem;
+        margin-bottom: 20px;
+    }
+    #content .main_chrt .main_pro{
+        padding-top: 4%;
+    }
+
+    #content .sub_pro li div h3{
+        font-size: 3vw;
+        padding: 0 0 3%;
+    }
+    #content .sub_pro li div p{
+       font-size: 2.1vw;
+    }
+}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    #content .main_chrt{
+        background-size: auto;
+        background-repeat: repeat;
+    }
+    #content .main_chrt ul li{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #content .main_chrt .rotate_img{
+        width: auto;
+        float: none;
+    }
+    #content .main_chrt .rotate_img .item{
+        width: auto;
+        height: auto;
+    }
+    #content .main_chrt .main_pro{
+        margin-left: 0;
+    }
+    #content .main_chrt .main_pro h3{
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    /* #content .sub_pro{
+        grid-row-gap: 3rem;
+        padding: 4.5rem 7%
+    }
+    #content .sub_pro li{
+        width: 90%;
+    }
+    */
+    
+
+
+    /* 640이하에서만 스와이퍼 적용 */
+    div.swiper-container{
+        overflow: visible;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        padding: 0;
+        z-index: 1;
+    }
+    #content .sub_pro{
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        transition-property: transform;
+        box-sizing: content-box;
+        grid-gap: 0;
+        background: none;
+    }
+    #content .sub_pro li{
+        flex-shrink: 0;
+        position: relative;
+        transition-property: transform;
+        /* width: 70%; */
+    }
+    #content .sub_pro li div h3{
+        font-size: 5vw;
+        padding: 5% 0;
+    }
+    #content .sub_pro li div p{
+       font-size: 4vw;
+       line-height: 1.5;
+    } 
+    #content .sub_pro li::after{
+        font-size: 8vw;
+    }
+}
+
+/* 최소사이즈 처리 */
+@media screen and (max-width:480px) {
+
+    #content h2{
+        font-size: 11vw;
+    }
+    #content .chrt_design div span{
+        font-size: 2.3rem;
+    }
+    #content .chrt_design div p:nth-of-type(1){
+        font-size: 1.05rem;
+    }
+    #content .chrt_design ul li{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    #content .chrt_design ul li:nth-child(1), #content .chrt_design ul li:nth-child(3){
+        right: 0;
+    }
+    #content .chrt_design ul li:nth-child(2){
+        left: 0;
+    }
+    #content .chrt_design ul li img{
+        width: 100%;
+        height: 200px;
+    }
+    #content .chrt_design ul li:hover p, #content .chrt_design ul li:nth-child(2):hover p{
+        left: 0;
+    }
+    #content .chrt_design ul li:hover p, #content .chrt_design ul li:nth-child(2):hover p{
+        bottom: 20px;
+    }
+    #content .main_chrt ul{
+        padding: 3rem 10%;
+    }
+    #content .main_chrt .rotate_img .item{
+        margin: 0 7%;
+    }
+
+    #content .sub_pro li:hover div{
+        padding-top: 1rem;
+    }
+    #content .sub_pro li div h3{
+        font-size: 6vw;
+        padding: 0;
+    }
+    #content .sub_pro li div p{
+       margin-top: 1%;
+    } 
+}
+@media screen and (max-width:450px) {
+    #content .sub_pro li div p{
+        font-size: 4.5vw;
+    }
+}
+
+@media screen and (max-width:320px) {
+    #content h2{
+        font-size: 2.5rem;
+    }
+    #content .chrt_design ul li img{
+        height: 150px;
+    }
+    #content .chrt_design ul li p{
+        font-size: 1.8rem;
+    }
+    @keyframes font {
+        to{}
+        from{font-size: 2rem;}
+    }
+    #content .main_chrt .change_btn{
+        width: 100px;
+        height: 50px;
+    }
+    #content .main_chrt .change_btn::after{
+        line-height: 2;
+    }
+    #content .main_chrt .rotate_img .item{
+        margin: 0 5%;
+    }
+}

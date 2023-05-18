@@ -1,0 +1,734 @@
+/* 와이드 pc  */
+.videoBox{width:100%;height:100%; overflow:hidden; position:absolute}
+#imgBG{
+	position:fixed; /*고정=>fixed/ 스크롤처리=>absolute */
+   left:50%;
+   top:50%; /*오른쪽, 아래에 여백을 두지않고 꽉차게 표시*/
+   width:auto;
+   min-width:100%; /*동영상 너비를 꽉차게*/
+   height:auto;
+   min-height:100%; /*동영상 높이를 꽉차게*/
+  transform:translateX(-50%) translateY(-50%);
+   z-index:-100;
+   /* display:none; */
+}
+
+/* OPTIONAL / defining page color variables */
+:root {
+  --green: #fff;
+}
+
+/* sub1 footer top */
+@keyframes font_ani {
+    0% {
+        color: rgb(250, 169, 176)
+    }
+
+    50% {
+        color: #fff;
+    }
+
+    100% {
+        color: rgb(250, 169, 176)
+    }
+}
+
+#footerArea .top {
+    box-shadow: 0px 0px 10px 5px rgb(250, 169, 176);
+    animation: font_ani 2s infinite;
+}
+
+#content{
+    position: relative;
+    /* background: linear-gradient(to bottom, #fff, #fec1c6); */
+}
+
+  
+#content h2{
+    position: absolute;
+    top: -500px;
+    left: 0;
+    text-align: center;
+    font-size: 3.889rem;
+    width: 100%;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0px 0px 10px rgba(254, 193, 198, .8);
+    /* -webkit-text-stroke: 1px rgb(254, 193, 198) ; */
+}
+
+.move {
+    animation: animateRed 2s infinite ease alternate;
+    }
+    
+      
+@keyframes animateRed {
+    0% { }
+    100% { transform:  scale(1.1, 1.1)}
+}
+
+/* glitch 효과 */
+
+h2.glitch::before, h2.glitch::after {
+    content: "ABOUT";
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49.5%, -49.5%);
+  }
+h2.glitch::before {
+    text-shadow: -2px 0 red;
+    animation-name: glitch-animation-1;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+  }
+h2.glitch::after {
+    text-shadow: -2px 0 blue;
+    animation-name: glitch-animation-2;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+  }
+  
+  @keyframes glitch-animation-1 {
+    0% {
+      clip: rect(73px, 350px, 62px, 0px);
+    }
+    5% {
+      clip: rect(49px, 350px, 27px, 0px);
+    }
+    10% {
+      clip: rect(121px, 350px, 121px, 0px);
+    }
+    15% {
+      clip: rect(68px, 350px, 24px, 0px);
+    }
+    20% {
+      clip: rect(19px, 350px, 143px, 0px);
+    }
+    25% {
+      clip: rect(98px, 350px, 8px, 0px);
+    }
+    0% {
+      clip: rect(20px, 350px, 126px, 0px);
+    }
+    35% {
+      clip: rect(74px, 350px, 76px, 0px);
+    }
+    40% {
+      clip: rect(103px, 350px, 60px, 0px);
+    }
+    45% {
+      clip: rect(149px, 350px, 5px, 0px);
+    }
+    50% {
+      clip: rect(149px, 350px, 53px, 0px);
+    }
+    55% {
+      clip: rect(57px, 350px, 34px, 0px);
+    }
+    60% {
+      clip: rect(36px, 350px, 115px, 0px);
+    }
+    65% {
+      clip: rect(39px, 350px, 51px, 0px);
+    }
+    70% {
+      clip: rect(78px, 350px, 14px, 0px);
+    }
+    75% {
+      clip: rect(23px, 350px, 91px, 0px);
+    }
+    80% {
+      clip: rect(32px, 350px, 34px, 0px);
+    }
+    85% {
+      clip: rect(140px, 350px, 79px, 0px);
+    }
+    90% {
+      clip: rect(143px, 350px, 78px, 0px);
+    }
+    95% {
+      clip: rect(65px, 350px, 144px, 0px);
+    }
+    100% {
+      clip: rect(61px, 350px, 38px, 0px);
+    }
+  }
+  @keyframes glitch-animation-2 {
+    0% {
+      clip: rect(125px, 350px, 69px, 0px);
+    }
+    5% {
+      clip: rect(92px, 350px, 17px, 0px);
+    }
+    10% {
+      clip: rect(109px, 350px, 44px, 0px);
+    }
+    15% {
+      clip: rect(137px, 350px, 140px, 0px);
+    }
+    20% {
+      clip: rect(5px, 350px, 1px, 0px);
+    }
+    25% {
+      clip: rect(139px, 350px, 95px, 0px);
+    }
+    0% {
+      clip: rect(79px, 350px, 115px, 0px);
+    }
+    35% {
+      clip: rect(121px, 350px, 5px, 0px);
+    }
+    40% {
+      clip: rect(48px, 350px, 106px, 0px);
+    }
+    45% {
+      clip: rect(134px, 350px, 117px, 0px);
+    }
+    50% {
+      clip: rect(53px, 350px, 38px, 0px);
+    }
+    55% {
+      clip: rect(64px, 350px, 132px, 0px);
+    }
+    60% {
+      clip: rect(118px, 350px, 13px, 0px);
+    }
+    65% {
+      clip: rect(40px, 350px, 120px, 0px);
+    }
+    70% {
+      clip: rect(72px, 350px, 148px, 0px);
+    }
+    75% {
+      clip: rect(53px, 350px, 108px, 0px);
+    }
+    80% {
+      clip: rect(31px, 350px, 134px, 0px);
+    }
+    85% {
+      clip: rect(61px, 350px, 139px, 0px);
+    }
+    90% {
+      clip: rect(28px, 350px, 139px, 0px);
+    }
+    95% {
+      clip: rect(117px, 350px, 94px, 0px);
+    }
+    100% {
+      clip: rect(94px, 350px, 122px, 0px);
+    }
+  }
+
+
+article{
+    overflow: visible !important;
+}
+
+/* about_belle */
+.about_belle{
+    padding: 0 7% 150px;
+    /* background: #fff; */
+    background: rgba(22, 27, 46, .8);
+}
+.about_belle h3{
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    padding: 60px 0 30px;
+    text-shadow: 0px 0px 5px #fff;
+    text-align: center;
+}
+
+.about_belle div p{
+    font-size: 1.1rem;
+    line-height: 2;
+    margin-bottom: 15px;
+}
+.about_belle ul{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 5%;
+    margin-top: 100px;
+}
+.about_belle ul li{
+    background: #ffb6d1;
+    border-radius: 10% 15% / 15% 20%;
+    width: 23%;
+    position: relative;
+}
+
+.about_belle ul li img{
+    width: 100%;
+    transition: transform .3s;
+    transform: rotatez(10deg);
+    filter: grayscale(0.7) blur(1px);
+    border-radius: 5%;
+    border: 2px solid #fec1c6;
+}
+
+.about_belle ul li:hover img{
+    transform: rotatez(0deg);
+    box-shadow: 5px -5px 10px rgba(254, 193, 198, .8);
+    border-radius: 0;
+    border: 2px solid #fff;
+    filter: grayscale(0) blur(0);
+  }
+
+/* 포인트 애니메이션 */
+  .circle {
+    border: 4px solid white;
+    border-radius: 80%;
+    width: 100%;
+    height: 100%;
+    max-width: 50px;
+    max-height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+  .circle:before {
+    border: 4px solid white;
+    border-radius: 80%;
+    content: "";
+    display: block;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: scale(0.875);
+    transform-origin: center center;
+    background: white;
+  }
+  .circle:after {
+    border: 1px solid white;
+    border-radius: 80%;
+    content: "";
+    display: block;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    transform: scale(1);
+    transform-origin: center center;
+    animation: 700ms pulse forwards infinite ease-in-out;
+    opacity: 0;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    0% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+  .about_belle ul li:hover .wrap{
+      display: none;
+  }
+
+
+/* plot */
+.plot {
+    /* height: 500px; */
+    background: url(../images/plot_bg.jpg) center top no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+.plot::before{
+    content: '';
+    position: absolute;
+    right: 5%;
+    top: 100px;
+    width: 80%;
+    height: 2px;
+    background: #fff;  
+    box-shadow: 0px 0px 5px #fff;  
+}
+.plot h3{
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    padding: 60px 0 0 5%;
+    text-shadow: 0px 0px 5px #fff;
+}
+.plot div{
+    /* background: linear-gradient(to bottom, #ae1e1d, transparent, transparent); */
+    padding: 30px 0 100px;
+}
+.plot div p{
+    font-size: 1.1rem;
+    line-height: 2;
+    margin-bottom: 15px;
+    padding: 0 5%;
+}
+
+/* production */
+.production{
+    /* background: linear-gradient(to bottom, #ae1e1d, #fff); */
+    background: rgba(22, 27, 46, .8);
+    padding-bottom: 100px;
+    position: relative;
+}
+.production::before{
+    /* background: linear-gradient(to bottom, #ae1e1d, #fff); */
+    content: '';
+    display: block;
+    position: absolute;
+    background: linear-gradient(90deg, #ffb6d1, transparent);
+    left: -10%;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    transform: skewX(-10deg);
+    z-index: 0;
+}
+
+.production h3{
+    text-align: right;
+    color: #fffffd;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    padding-bottom: 20px;
+    text-shadow: 0px 0px 5px #fff;
+    padding: 5% 8% 0 0;
+}
+.production>div{
+    overflow: hidden;
+    margin: 1rem 5% 0;
+    border: 3px solid #fffffd;
+    border-radius: 10% 20% / 20% 15%;
+    padding: 5%;
+    position: relative;
+}
+.production .product{
+    float: left;
+    width: 25%;
+    position: relative;
+    border: 1px solid #fff;
+    transition: all .3s;
+}
+.production .product:hover{
+    background: #fff;
+    color: #333;
+    font-weight: 500;
+}
+.production .product p{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+.production .product p span{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    margin-right: 10px;
+}
+
+.production .product img{
+    width: 100%;
+    box-sizing: border-box;
+    transition: all .3s;
+}
+.production .major p{
+    float: left;
+    width: 65%;
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: left;
+    /* display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal; */
+    z-index: 1;
+    position: relative;
+    margin: 10px 0 30px 5%; 
+}
+
+.production .major ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 5%;
+    position: relative;
+    z-index: 1;
+}
+.production .major ul li{
+    width: 30%;
+}
+.production .major ul li img{
+    width: 100%;
+    border-radius: 10% 30% / 40% 10%;
+    border: 2px solid #fff;
+    transition: all .3s;
+    
+}
+.production .major ul li img:hover{
+    transform: scale(1.1) translateY(15px);
+    border: 2px solid #fec1c6;
+}
+
+
+/* 일반 pc */
+@media screen and (max-width:1280px) {
+    .about_belle ul{
+        justify-content: space-between;
+    }
+    .about_belle ul li{
+        width: 27%;
+    }
+    .production .product{
+        width: 28%;
+    }
+    .production .product p span{
+        display: block;
+    }
+    .production .major ul{
+        width: 100%;
+        padding: 0;
+    }
+    .production .major ul li{
+        width: 30%;
+    }
+    .plot::before{
+        width: 77%;
+    }
+}
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+    .down{
+    font-size: 1rem;
+    }
+    .about_belle{
+        padding: 0 6% 80px;
+    }
+    .about_belle h3{
+        margin-top: 6rem;
+    }
+    .about_belle ul{
+        padding: 0;
+    }
+    .plot h3{
+        padding-left: 6%;
+    }
+    .plot::before{
+        width: 75%;
+        right: 6%;
+    }
+    .plot div p{
+        padding: 0 6%;
+    }
+    .production .product{
+        width: 50%;
+        height: 400px;
+        overflow: hidden;
+        margin-right: 5%;
+        position: relative;
+        z-index: 2;
+    }
+    .production .major p{
+        float: none;
+        width: 100%;
+        text-align: justify;
+        margin: 0 0 30px;
+    }
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+    
+    .about_belle div p:nth-child(3){
+        display: none;
+    }
+    .about_belle ul{
+        justify-content: space-around;
+    }
+    .about_belle ul li{
+        width: 37%;
+    }
+    .about_belle ul li:nth-child(3){
+        display: none;
+    }
+    .plot::before{
+        display: none;
+    }
+    .plot h3{
+        text-align: center;
+        padding-left: 0;
+    }
+    .plot div{
+        padding-bottom: 80px;
+    }
+    .production h3{
+        padding-top: 7%;
+        position: relative;
+        z-index: 1;
+    }
+    .production::before{
+        width: 70%;
+        left: -20%;
+    }
+    .production .product{
+        background: #fff;
+        color: #333;
+        font-weight: 500;
+    }
+    
+    .production .major ul{
+        justify-content: space-around;
+    }
+    .production .major ul li{
+        width: 45%;
+    }
+    .production .major ul li:nth-child(3){
+        display: none;
+    }
+}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    .production{
+        padding-bottom: 80px;
+    }
+    .production::before{
+        left: -30%;
+    }
+    .production h3{
+        text-align: center;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+    .production .product{
+        width: 84%;
+        margin: 5% 6%;
+        height: 330px;
+    }
+    .production .product p{
+        display: inline;
+        float: left;
+        writing-mode: vertical-rl;
+        box-sizing: border-box;
+        width: 15%;
+        padding: 5% 4.5%;
+    }
+    .production .product p span{
+        margin-right: 0;
+        display: inline;
+        margin-bottom: 10px;
+    }
+    .production .product img{
+        width: 85%;
+    }
+}
+
+/* 최소사이즈 처리 */
+@media screen and (max-width:480px) {
+    #content h2{
+        font-size: 3.3rem;
+    }
+    #content h3{
+        font-size: 2.5rem;
+    }
+    .about_belle div p:nth-child(2){
+        display: none;
+    }
+    .about_belle ul{
+        margin-top: 50px;
+    }
+    .about_belle ul li{
+        width: 70%;
+    }
+    .about_belle ul li:nth-child(2){
+        display: none;
+    }
+    .plot div p{
+        text-align: justify;
+    }
+
+    .production::before{
+        left: -45%;
+    }
+    .production .product{
+        width: 90%;
+        margin: 5%;
+        height: 300px;
+    }
+   
+    .production .product p{
+        width: 100%;
+        writing-mode: initial;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #fff;
+    }
+    
+    .production .product img{
+        width: 100%;
+    }
+    .production .major ul li{
+        width: 100%;
+    }
+    .production .major ul li:nth-child(1){
+        display: none;
+    }
+}
+
+@media screen and (max-width:320px) {
+    #content h2{
+        font-size: 2.8rem;
+    }
+    .about_belle div p{
+        text-align: justify;
+        padding: 0 5%;
+    }
+    .about_belle ul li{
+        width: 80%;
+    }
+    .plot div{
+        padding-bottom: 50px;
+    }
+    .plot div p{
+        padding: 0 10%;
+    }
+    .plot div p:nth-child(2){
+        display: none;
+    }
+    .production{
+        padding-bottom: 60px;
+    }
+    .production h3{
+        padding-top: 50px
+    }
+    .production .product{
+        width: 100%;
+        margin: 5% 0;
+        height: 250px;
+    }
+    .production .product p span{
+        display: block;
+    }
+}
