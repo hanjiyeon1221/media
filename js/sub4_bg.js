@@ -1,35 +1,35 @@
 
-    var screenSize, screenHeight;
-  
-    function screen_size(){
-        screenSize = $(window).width(); //스크린의 너비
-        screenHeight = $(window).height();  //스크린의 높이
-  
-        $("#content").css('margin-top',screenHeight);
+var screenSize, screenHeight;
 
-        var titleHeight = $('#content h2').height();   //타이틀 제목 높이
-        $('#content h2').css('top', -(screenHeight/2)-titleHeight);  // 해상도별 높이 고정
+function screen_size(){
+    screenSize = $(window).width(); //스크린의 너비
+    screenHeight = $(window).height();  //스크린의 높이
+
+    $("#content").css('margin-top',screenHeight);
+
+    var titleHeight = $('#content h2').height();   //타이틀 제목 높이
+    $('#content h2').css('top', -(screenHeight/2)-titleHeight);  // 해상도별 높이 고정
+    
+    if( screenSize > 768){
+        $("#imgBG").attr('src','./images/sub_main4.jpg');  //큰이미지
         
-        if( screenSize > 768){
-            $("#imgBG").attr('src','./images/sub_main4.jpg');  //큰이미지
-            
-          }else{
-            $("#imgBG").attr('src','./images/sub_main4_2.jpg'); //작은이미지
-          }
-        
-        }
+      }else{
+        $("#imgBG").attr('src','./images/sub_main4_2.jpg'); //작은이미지
+      }
+    
+    }
     
   
-    screen_size();  //최초 실행시 호출
-    
-   $(window).resize(function(){    //웹브라우저 크기 조절시 반응하는 이벤트 메소드()
-        screen_size();
-    }); 
-    
-    $('.down').click(function(){
-        screenHeight = $(window).height();
-        $('html,body').animate({'scrollTop':screenHeight}, 1000);
-    });
+screen_size();  //최초 실행시 호출
+
+$(window).resize(function(){    //웹브라우저 크기 조절시 반응하는 이벤트 메소드()
+    screen_size();
+}); 
+
+$('.down').click(function(){
+    screenHeight = $(window).height();
+    $('html,body').animate({'scrollTop':screenHeight}, 1000);
+});
     
    
 //typing
@@ -114,11 +114,11 @@ $('.costume_box .play_ani').click(function(e){
 
 
 
-    // 코스튬 뷰
-    var cnt=0;  // 0 1 2 3 4 5 6 7
-    var total=0;  // 8
-    $('.costume_box .costume_set li:eq(0)').fadeIn('slow');
-    total=$('.costume_box .costume_set li').size();  // 8
+// 코스튬 뷰
+var cnt=0;  // 0 1 2 3 4 5 6 7
+var total=0;  // 8
+$('.costume_box .costume_set li:eq(0)').fadeIn('slow');
+total=$('.costume_box .costume_set li').size();  // 8
 
 // console.log(total);
 
@@ -151,8 +151,6 @@ $('.cos_btn .pre').click(function(e){
 });
 
 
-
-
 // 돋보기 클릭시 이미지 확대
 $('.costume_box .img_scale').toggle(function(e){
   e.preventDefault();
@@ -170,7 +168,5 @@ $('.costume_box .goodcheck').click(function(e){
   $('.costume_set li i').fadeOut('slow');
 });
 
-
-  
 
 

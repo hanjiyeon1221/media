@@ -53,23 +53,22 @@ $(window).on('scroll',function(){ //스크롤 값의 변화가 생기면
  
   // $('.text').text(scroll);
 
-  if(scroll>winh){ //화면높이/3 이상의 거리가 발생되면
-      $('.top').fadeIn('slow');  //top보여라~~~~
+  if(scroll>winh){ //화면높이/2 이상의 거리가 발생되면
+      $('.top').fadeIn('slow'); 
   }else{
-      $('.top').fadeOut('fast');//top안보여라~~~~
+      $('.top').fadeOut('fast');
   }
 });
 
 $('.top').click(function(e){
  e.preventDefault();
-  //상단으로 스르륵 이동합니다.
+  //상단으로 부드럽게 이동
  $("html,body").stop().animate({"scrollTop":0},1000); 
 });
 
 
 
 //main footer BELLE effect
-	
 (d => {
   const word = d.querySelector(".word");
 
