@@ -1,4 +1,46 @@
 // gnb menu
+//--------javascript----------
+const navbtn = document.querySelector('.btn');
+const gnbmenu = document.getElementById('gnb');
+const modalbox = document.querySelector('.box')
+// --네비 버튼 클릭,
+navbtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  
+  let documentHeight = window.innerHeight;
+  //console.log(documentHeight)
+  gnbmenu.style.height = documentHeight + 'px';
+ 
+  gnbmenu.animate([
+    // {right: '-100%', opacity: 0},
+    {right: 0, opacity: 1}
+  ], {
+      duration: 200,
+      fill: "forwards"
+  });
+
+  modalbox.style.cssText = `display: block; height: ${documentHeight}px`
+});
+
+// --닫기 버튼 클릭,
+const closeBtn = document.querySelector('.close');
+
+closeBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  gnbmenu.animate([
+    // {right: '-100%', opacity: 0},
+    {right: '-100%', opacity: 0}
+  ], {
+      duration: 200,
+      fill: "forwards"
+  });
+
+  modalbox.style.cssText = `display: none;`;
+});
+
+//--------jQuery----------
+/*
 $(".btn").click(function () {
   // e.preventDefault();
   var documentHeight = $(document).height();
@@ -19,7 +61,8 @@ $(".close").click(function () {
   }, 'fast');
   $(".box").hide();
 });
-      
+*/
+
 var current=0;
 $(window).resize(function(){    //웹브라우저 크기 조절시 반응하는 이벤트 메소드()
   var screenSize = $(window).width(); 
@@ -39,7 +82,7 @@ $(window).resize(function(){    //웹브라우저 크기 조절시 반응하는 
       $("#gnb").css('height', documentHeight);
   }
 }); 
-   
+  
 
 /* quick top */
 // $(document).on('click', '.top', function(e){
@@ -91,7 +134,6 @@ $('.top').click(function(e){
 
   window.addEventListener("mousemove", shadow);
 })(document);
-
 
 
 // 마우스 커서 효과
