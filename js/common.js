@@ -12,7 +12,6 @@ navbtn.addEventListener('click', (e) => {
   gnbmenu.style.height = documentHeight + 'px';
  
   gnbmenu.animate([
-    // {right: '-100%', opacity: 0},
     {right: 0, opacity: 1}
   ], {
       duration: 200,
@@ -29,7 +28,6 @@ closeBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
   gnbmenu.animate([
-    // {right: '-100%', opacity: 0},
     {right: '-100%', opacity: 0}
   ], {
       duration: 200,
@@ -40,31 +38,62 @@ closeBtn.addEventListener('click', (e) => {
 });
 
 //--------jQuery----------
-/*
-$(".btn").click(function () {
-  // e.preventDefault();
-  var documentHeight = $(document).height();
-  $("#gnb").css('height', documentHeight);
 
-  $("#gnb").animate({
-      right: 0,
-      opacity: 1
-  }, 'fast');
-  $(".box").show();
-});
+// $(".btn").click(function () {
+//   // e.preventDefault();
+//   var documentHeight = $(document).height();
+//   $("#gnb").css('height', documentHeight);
 
-$(".close").click(function () {
-  // e.preventDefault();
-  $("#gnb").animate({
-      right: '-100%',
-      opacity: 0
-  }, 'fast');
-  $(".box").hide();
-});
-*/
+//   $("#gnb").animate({
+//       right: 0,
+//       opacity: 1
+//   }, 'fast');
+//   $(".box").show();
+// });
 
+// $(".close").click(function () {
+//   // e.preventDefault();
+//   $("#gnb").animate({
+//       right: '-100%',
+//       opacity: 0
+//   }, 'fast');
+//   $(".box").hide();
+// });
+
+
+
+
+//resize 적용 (웹브라우저 크기 조절시 반응)
+
+//--------javascript----------
+// function screen_size(){
+//     let current=0;
+//     let screenSize = window.innerWidth;
+//     let documentHeight = window.innerHeight;
+
+//     if(screenSize > 768){
+//       current = 1;
+//       gnbmenu.style.cssText = `right: 0, opacity: 1`;
+//       modalbox.style.display = 'none';
+//       gnbmenu.style.height = 'auto';
+//     }
+//     if(current==1 && screenSize <= 768){
+//       gnbmenu.style.cssText = `right: -100%, opacity: 0`;
+//       modalbox.style.display = 'none';
+//       current = 0;
+//       gnbmenu.style.height = `${documentHeight}px`;
+      
+//     }
+// }
+
+// window.addEventListener('resize', () => {
+//   screen_size();
+// });
+
+
+//--------jQuery----------
 var current=0;
-$(window).resize(function(){    //웹브라우저 크기 조절시 반응하는 이벤트 메소드()
+$(window).resize(function(){    
   var screenSize = $(window).width(); 
   if( screenSize > 768){
     current=1;
