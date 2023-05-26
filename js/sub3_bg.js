@@ -1,62 +1,55 @@
+//해상도별 비주얼 이미지 변경
+//------javascript------
+var screenSize, screenHeight;
+const mainContent = document.getElementById("content");
+const contentH2 = document.querySelector("#content h2");
+const imgBG = document.getElementById('imgBG');
 
-    var screenSize, screenHeight;
-  
-    function screen_size(){
-        screenSize = $(window).width(); //스크린의 너비
-        screenHeight = $(window).height();  //스크린의 높이
-  
-        $("#content").css('margin-top',screenHeight);
+function screen_size() {
+  screenSize = $(window).width(); //스크린의 너비
+  screenHeight = $(window).height(); //스크린의 높이
 
-        var titleHeight = $('#content h2').height();   //타이틀 제목 높이
-        $('#content h2').css('top', -(screenHeight/2)-titleHeight);  // 해상도별 높이 고정
-        
-        if( screenSize > 768){
-            $("#imgBG").attr('src','./images/sub_main3.jpg');  //큰이미지
-            
-          }else{
-            $("#imgBG").attr('src','./images/sub_main3_2.jpg'); //작은이미지
-          }
-        
-        }
-    
-  
-    screen_size();  //최초 실행시 호출
-    
-   $(window).resize(function(){    //웹브라우저 크기 조절시 반응하는 이벤트 메소드()
-        screen_size();
-    }); 
-    
-    $('.down').click(function(){
-        screenHeight = $(window).height();
-        $('html,body').animate({'scrollTop':screenHeight}, 1000);
-    });
+  mainContent.style.marginTop = `${screenHeight}px`;
+
+  const titleHeight = contentH2.height;
+  contentH2.style.top = `-(${screenHeight}/2)-titleHeight`;
+
+  if (screenSize > 768) {
+    imgBG.src = `./images/sub_main3.jpg`; // big img
+  }else{
+    imgBG.src = `./images/sub_main3_2.jpg`; // small img
+  }
+}
+
+screen_size(); //최초 실행시 호출
+
+window.addEventListener('resize', function(){
+    screen_size();
+})
     
    
 //typing
-
+//------javascript------
 const content = "TRAILER".split("");
-//let typingBool = false;
+let typingBool = false;
 let typingIdx = 0;
-$("#content h2").empty();
 
-function typing () {
-    if (typingIdx < content.length) {
-        $("#content h2").append(content[typingIdx]);
-        typingIdx++; 
-    } 
-    else{ 
-          clearInterval(clear1);  //한번 모두 타이핑 처리 후 멈춤
-          $('#content h2').addClass('glitch');
-        //typingIdx = 0;
-        //$("#content h2").empty();  // 다시 계속해서 loop
-        
-    } 
+contentH2.innerHTML = '';  //비우고
+
+function typing (){
+    if(typingIdx < content.length){
+        contentH2.append(content[typingIdx]);
+        typingIdx++;
+    }else{
+        clearInterval(clear1);
+        contentH2.classList.add('glitch');
+    }
 }
-let clear1 =  setInterval(typing, 200); 
+let clear1 =  setInterval(typing, 200);
 
 
 
-//웨이브 애니메이션
+/* 웨이브 애니메이션 */
 // modified version of random-normal
 function normalPool(o){var r=0;do{var a=Math.round(normal({mean:o.mean,dev:o.dev}));if(a<o.pool.length&&a>=0)return o.pool[a];r++}while(r<100)}function randomNormal(o){if(o=Object.assign({mean:0,dev:1,pool:[]},o),Array.isArray(o.pool)&&o.pool.length>0)return normalPool(o);var r,a,n,e,l=o.mean,t=o.dev;do{r=(a=2*Math.random()-1)*a+(n=2*Math.random()-1)*n}while(r>=1);return e=a*Math.sqrt(-2*Math.log(r)/r),t*e+l}
 

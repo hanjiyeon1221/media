@@ -1,4 +1,4 @@
-//main footer BELLE effect
+/* main footer BELLE effect */
 (d => {
   const word = d.querySelector(".word");
 
@@ -23,7 +23,7 @@
 })(document);
 
 
-// 마우스 커서 효과
+/* 마우스 커서 효과 */
 // declares variables for big circle and small circle in cursor
 var cursorBig = document.querySelector('.big');
 var cursorSmall = document.querySelector('.small');
@@ -69,7 +69,7 @@ cursorSmall.classList.remove('hover__small');
 
 
 
-// gnb menu
+/* gnb menu */
 //--------javascript----------
 const navbtn = document.querySelector('.btn');
 const gnbmenu = document.getElementById('gnb');
@@ -118,7 +118,7 @@ closeBtn.addEventListener('click', (e) => {
 // });
 
 
-//resize 적용 (웹브라우저 크기 조절시 반응)
+/* resize 적용 (웹브라우저 크기 조절시 반응) */
 //--------javascript----------
 function screen_size(){
     let current=0;
@@ -208,3 +208,18 @@ topmove.addEventListener('click', function(e){
 // });
 
 
+/* scroll down */
+//--------javascript----------
+const scrollDown = document.querySelector('.down');
+scrollDown.addEventListener('click', function(e){
+    screenHeight = $(window).height();
+    e.preventDefault();
+    window.scrollTo({top: screenHeight, behavior:'smooth'});
+  
+  })
+
+//--------jQuery----------
+// $(".down").click(function () {
+//   screenHeight = $(window).height();
+//   $("html,body").animate({ scrollTop: screenHeight }, 1000);
+// });
