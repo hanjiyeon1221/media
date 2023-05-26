@@ -1,145 +1,3 @@
-// gnb menu
-//--------javascript----------
-const navbtn = document.querySelector('.btn');
-const gnbmenu = document.getElementById('gnb');
-const modalbox = document.querySelector('.box')
-// --네비 버튼 클릭,
-navbtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  
-  let documentHeight = window.innerHeight;
-  //console.log(documentHeight)
-  gnbmenu.style.height = documentHeight + 'px';
- 
-  gnbmenu.animate([
-    {right: 0, opacity: 1}
-  ], {
-      duration: 200,
-      fill: "forwards"
-  });
-
-  modalbox.style.cssText = `display: block; height: ${documentHeight}px`
-});
-
-// --닫기 버튼 클릭,
-const closeBtn = document.querySelector('.close');
-
-closeBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-
-  gnbmenu.animate([
-    {right: '-100%', opacity: 0}
-  ], {
-      duration: 200,
-      fill: "forwards"
-  });
-
-  modalbox.style.cssText = `display: none;`;
-});
-
-//--------jQuery----------
-
-// $(".btn").click(function () {
-//   // e.preventDefault();
-//   var documentHeight = $(document).height();
-//   $("#gnb").css('height', documentHeight);
-
-//   $("#gnb").animate({
-//       right: 0,
-//       opacity: 1
-//   }, 'fast');
-//   $(".box").show();
-// });
-
-// $(".close").click(function () {
-//   // e.preventDefault();
-//   $("#gnb").animate({
-//       right: '-100%',
-//       opacity: 0
-//   }, 'fast');
-//   $(".box").hide();
-// });
-
-
-
-
-//resize 적용 (웹브라우저 크기 조절시 반응)
-
-//--------javascript----------
-// function screen_size(){
-//     let current=0;
-//     let screenSize = window.innerWidth;
-//     let documentHeight = window.innerHeight;
-
-//     if(screenSize > 768){
-//       current = 1;
-//       gnbmenu.style.cssText = `right: 0, opacity: 1`;
-//       modalbox.style.display = 'none';
-//       gnbmenu.style.height = 'auto';
-//     }
-//     if(current==1 && screenSize <= 768){
-//       gnbmenu.style.cssText = `right: -100%, opacity: 0`;
-//       modalbox.style.display = 'none';
-//       current = 0;
-//       gnbmenu.style.height = `${documentHeight}px`;
-      
-//     }
-// }
-
-// window.addEventListener('resize', () => {
-//   screen_size();
-// });
-
-
-//--------jQuery----------
-var current=0;
-$(window).resize(function(){    
-  var screenSize = $(window).width(); 
-  if( screenSize > 768){
-    current=1;
-    $("#gnb").css({right:0,opacity:1});
-    $(".box").hide();
-    $("#gnb").css('height', 'auto');
-  }
-  
-  if(current==1 && screenSize <= 768){
-      $("#gnb").css({right:'-100%',opacity:0});
-      $(".box").hide();
-      current=0;
-
-      documentHeight = $(document).height();
-      $("#gnb").css('height', documentHeight);
-  }
-}); 
-  
-
-/* quick top */
-// $(document).on('click', '.top', function(e){
-//     e.preventDefault();
-//     $('html,body').animate({'scrollTop':0});
-// });
-
-$(window).on('scroll',function(){ //스크롤 값의 변화가 생기면
-  var scroll = $(window).scrollTop(); //스크롤의 거리
-  var winh = $(window).height()/2;
- 
-  // $('.text').text(scroll);
-
-  if(scroll>winh){ //화면높이/2 이상의 거리가 발생되면
-      $('.top').fadeIn('slow'); 
-  }else{
-      $('.top').fadeOut('fast');
-  }
-});
-
-$('.top').click(function(e){
- e.preventDefault();
-  //상단으로 부드럽게 이동
- $("html,body").stop().animate({"scrollTop":0},1000); 
-});
-
-
-
 //main footer BELLE effect
 (d => {
   const word = d.querySelector(".word");
@@ -166,7 +24,6 @@ $('.top').click(function(e){
 
 
 // 마우스 커서 효과
-
 // declares variables for big circle and small circle in cursor
 var cursorBig = document.querySelector('.big');
 var cursorSmall = document.querySelector('.small');
@@ -209,3 +66,145 @@ cursorBig.classList.remove('hover__big');
 cursorSmall.classList.remove('hover__small');
 });
 })
+
+
+
+// gnb menu
+//--------javascript----------
+const navbtn = document.querySelector('.btn');
+const gnbmenu = document.getElementById('gnb');
+const modalbox = document.querySelector('.box');
+let documentHeight = window.innerHeight;
+
+    // --네비 버튼 클릭,
+navbtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  
+  gnbmenu.style.cssText = `right: 0; opacity: 1; height: ${documentHeight}px; transition: all .3s`;
+  modalbox.style.cssText = `display: block; height: ${documentHeight}px;`;
+});
+
+    // --닫기 버튼 클릭,
+const closeBtn = document.querySelector('.close');
+
+closeBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  gnbmenu.style.cssText = `right: -100%; opacity: 0; height: ${documentHeight}px; transition: all .3s`;
+  modalbox.style.cssText = `display: none;`;
+});
+
+//--------jQuery----------
+
+// $(".btn").click(function () {
+//   // e.preventDefault();
+//   var documentHeight = $(document).height();
+//   $("#gnb").css('height', documentHeight);
+
+//   $("#gnb").animate({
+//       right: 0,
+//       opacity: 1
+//   }, 'fast');
+//   $(".box").show();
+// });
+
+// $(".close").click(function () {
+//   // e.preventDefault();
+//   $("#gnb").animate({
+//       right: '-100%',
+//       opacity: 0
+//   }, 'fast');
+//   $(".box").hide();
+// });
+
+
+//resize 적용 (웹브라우저 크기 조절시 반응)
+//--------javascript----------
+function screen_size(){
+    let current=0;
+    let screenSize = window.innerWidth;
+    let documentHeight = window.innerHeight;
+
+    if(screenSize > 768){
+      current = 1;
+      gnbmenu.style.cssText = `right: 0, opacity: 1`;
+      modalbox.style.display = 'none';
+      gnbmenu.style.height = 'auto';
+    }
+    if(current==1 && screenSize <= 768){
+      gnbmenu.style.cssText = `right: -100%, opacity: 0`;
+      modalbox.style.display = 'none';
+      current = 0;
+      gnbmenu.style.height = `${documentHeight}px`;
+      
+    }
+}
+
+window.addEventListener('resize', () => {
+  screen_size();
+});
+
+//--------jQuery----------
+// var current=0;
+// $(window).resize(function(){    
+//   var screenSize = $(window).width(); 
+//   if( screenSize > 768){
+//     current=1;
+//     $("#gnb").css({right:0,opacity:1});
+//     $(".box").hide();
+//     $("#gnb").css('height', 'auto');
+//   }
+  
+//   if(current==1 && screenSize <= 768){
+//       $("#gnb").css({right:'-100%',opacity:0});
+//       $(".box").hide();
+//       current=0;
+
+//       documentHeight = $(document).height();
+//       $("#gnb").css('height', documentHeight);
+//   }
+
+//   console.log(current)
+// }); 
+  
+const topmove = document.querySelector('.top');
+/* quick top */
+//--------javascript----------
+window.addEventListener('scroll', function(){
+  let scroll = window.scrollY;
+  let winh = window.innerHeight/2;
+
+  if(scroll > winh){
+    topmove.style.cssText = `opacity: 1; transition: opacity .5s`;
+  }else{
+    topmove.style.cssText = `opacity: 0; transition: opacity .5s`;
+  }
+})
+
+topmove.addEventListener('click', function(e){
+  e.preventDefault();
+  window.scrollTo({top:0, behavior:'smooth'});
+
+})
+
+//--------jQuery----------
+// $(window).on('scroll',function(){ //스크롤 값의 변화가 생기면
+//   var scroll = $(window).scrollTop(); //스크롤의 거리
+//   var winh = $(window).height()/2;
+ 
+//   // $('.text').text(scroll);
+
+//   if(scroll>winh){ //화면높이/2 이상의 거리가 발생되면
+//       $('.top').fadeIn('slow'); 
+//   }else{
+//       $('.top').fadeOut('fast');
+//   }
+// });
+
+// $('.top').click(function(e){
+//  e.preventDefault();
+//   //상단으로 부드럽게 이동
+//  $("html,body").stop().animate({"scrollTop":0},1000); 
+// });
+
+

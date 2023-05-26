@@ -327,6 +327,7 @@ dd {
     box-shadow: 0px 0px 10px 5px rgba(255, 95, 218, 0.8);
     border-radius: 10px;
     animation: font_ani 2s infinite;
+    opacity: 0;
  }
 
 /* OPTIONAL / defining page color variables */
