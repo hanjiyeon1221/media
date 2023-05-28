@@ -7,6 +7,10 @@
 
 ## 🔗URL
 http://cjstkapfhddl.cafe24.com/media/
+<br><br>
++워드프레스를 이용한 LUSH 반응형 웹사이트도 구경해보세요😊 (제작기간 3일)
+<br>
+http://cjstkapfhddl.dothome.co.kr/wordpress/
 
 ## ⚔STACKS
 * HTML5
