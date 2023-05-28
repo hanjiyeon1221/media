@@ -25,7 +25,7 @@ http://cjstkapfhddl.cafe24.com/media/
 * 해상도별 각기 다른 UI와 이벤트를 제공
   - PC(1024~) / Tablet(~1024) / Mobile(~640)
 
-#### 상세 디자인
+#### 상세 디자인🎨
 - PC: 1depth 형식의 gnb / 태블릿&모바일: 우측상단에서 슬라이드 오픈되는 햄버거 메뉴 형식의 gnb 제공
 - Adobe illustrator를 사용하여 애니메이션 캐릭터를 제작 & scroll down 기능 제공 
 - CSS3 및 플러그인을 활용한 hover / mouse / animation effect로 시각적 재미 제공 및 사용자의 상호작용 유도
